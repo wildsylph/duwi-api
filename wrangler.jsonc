@@ -10,7 +10,8 @@
 		{
 			"binding": "DB",
 			"database_name": "duwidb",
-			"database_id": "72b065a6-37bf-403f-bbdf-89c2bfc338e3"
+			"database_id": "68bf1c4e-7fa1-479a-a197-722b627f6069",
+			"remote": true
 		}
 	]
 }
