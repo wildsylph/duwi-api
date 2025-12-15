@@ -31,8 +31,6 @@ app.onError((err, c) => {
 		500,
 	);
 });
-// Apply to all routes (global protection)
-app.use(authMiddleware);
 
 // Setup OpenAPI registry
 const openapi = fromHono(app, {
@@ -45,6 +43,8 @@ const openapi = fromHono(app, {
 		},
 	},
 });
+// Apply authMiddleware to all routes except the docs route
+app.use("/(?!$).*", authMiddleware);
 
 // Register Tasks Sub router
 openapi.route("/users", usersRouter);
