@@ -24,9 +24,6 @@ This project builds an OpenAPI compliant Worker that generates the
    ...and update the `database_id` field in `wrangler.json` with the new database ID.
 3. Run the following db migration to initialize the database (notice the `migrations` directory in this project):
    ```bash
-   # for local db
-   npx wrangler d1 migrations apply DB --local
-   # for remote db
    npx wrangler d1 migrations apply DB --remote
    ```
 4. Deploy the project!

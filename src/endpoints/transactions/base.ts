@@ -5,7 +5,7 @@ export const transaction = z.object({
     guild_id: z.string(),
     points: z.number(),
     transacted_by: z.string(),
-    timestamp: z.string(),
+    timestamp: z.number(),
 });
 
 export const TransactionModel = {

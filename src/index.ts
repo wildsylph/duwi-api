@@ -6,7 +6,7 @@ import { securityRouter } from "./endpoints/security/router";
 import { transactionRouter } from "./endpoints/transactions/router";
 import { pointsRouter } from "./endpoints/points/router";
 import { cumulativeCallTimeRouter } from "./endpoints/cumulativeCallTime/router";
-import { settingTypesRouter } from "./endpoints/settingTypes/router";
+import { callTimeRouter } from "./endpoints/callTime/router";
 import { settingsRouter } from "./endpoints/settings/router";
 import { ContentfulStatusCode } from "hono/utils/http-status";
 import { authMiddleware } from "./authMiddleware";
@@ -55,10 +55,9 @@ openapi.route("/guilds", guildsRouter);
 openapi.route("/security", securityRouter);
 openapi.route("/transactions", transactionRouter);
 openapi.route("/points", pointsRouter);
+openapi.route("/call-time", callTimeRouter);
 openapi.route("/cumulative-call-time", cumulativeCallTimeRouter);
 openapi.route("/settings", settingsRouter);
-openapi.route("/setting-types", settingTypesRouter);
-
 
 // Export the Hono app
 export default app;

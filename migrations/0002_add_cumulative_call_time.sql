@@ -15,9 +15,10 @@ CREATE TABLE IF NOT EXISTS settings (
     PRIMARY KEY (guild_id, key)
 );
 
--- Add setting_types table
-CREATE TABLE IF NOT EXISTS setting_types (
-    key TEXT,
-    value_type TEXT,
-    PRIMARY KEY (key)
+-- Add voice channel time
+CREATE TABLE IF NOT EXISTS call_time (
+    user_id TEXT,
+    channel_id TEXT,
+    timestamp INTEGER,
+    PRIMARY KEY (user_id)
 );
