@@ -8,7 +8,7 @@ import { PointsDelete } from "./pointsDelete";
 
 export const pointsRouter = fromHono(new Hono());
 
-pointsRouter.get("/", PointsList);
+pointsRouter.get("/:guild_id", PointsList);
 pointsRouter.post("/", PointsCreate);
 pointsRouter.get("/:user_id/:guild_id", PointsRead);
 pointsRouter.put("/:user_id/:guild_id", PointsUpdate);

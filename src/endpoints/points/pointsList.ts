@@ -6,6 +6,5 @@ export class PointsList extends D1ListEndpoint<HandleArgs> {
   _meta = {
     model: PointsModel,
   };
-
-  searchFields = ["user_id", "guild_id"];
+  defaultOrderBy = 'points DESC'
 }
