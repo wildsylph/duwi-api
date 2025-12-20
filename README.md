@@ -49,13 +49,14 @@ However, I have yet to create any tests.
 
 ## Endpoints
 - /users
+- /user-settings
 - /guilds
+- /guild-settings
 - /points
 - /security
-- settings
-- /setting-types
 - /transactions
 - /cumulative-call-time
+- /call-time
 
 ## Project structure
 
@@ -67,4 +68,11 @@ However, I have yet to create any tests.
 # Notable CLI commands
 ```bash
 npm run schema
+```
+
+```bash
+npx wrangler d1 delete duwidb
+npx wrangler d1 create duwidb
+# update wrangler.jsonc by deleting old db binding
+npx wrangler d1 migrations apply duwidb --remote
 ```

@@ -7,7 +7,8 @@ import { transactionRouter } from "./endpoints/transactions/router";
 import { pointsRouter } from "./endpoints/points/router";
 import { cumulativeCallTimeRouter } from "./endpoints/cumulativeCallTime/router";
 import { callTimeRouter } from "./endpoints/callTime/router";
-import { settingsRouter } from "./endpoints/settings/router";
+import { guildSettingsRouter } from "./endpoints/guildSettings/router";
+import { userSettingsRouter } from "./endpoints/userSettings/router";
 import { ContentfulStatusCode } from "hono/utils/http-status";
 import { authMiddleware } from "./authMiddleware";
 
@@ -41,7 +42,7 @@ const openapi = fromHono(app, {
 	schema: {
 		info: {
 			title: "DUWI API",
-			version: "2.0.0",
+			version: "1.0.0",
 			description: "This is the documentation for DUWI API, an API for all things DUWI related.",
 		},
 	},
@@ -51,13 +52,14 @@ app.use("/(?!$).*", authMiddleware);
 
 // Register Tasks Sub router
 openapi.route("/users", usersRouter);
+openapi.route("/user-settings", userSettingsRouter);
 openapi.route("/guilds", guildsRouter);
+openapi.route("/guild-settings", guildSettingsRouter);
 openapi.route("/security", securityRouter);
-openapi.route("/transactions", transactionRouter);
 openapi.route("/points", pointsRouter);
+openapi.route("/transactions", transactionRouter);
 openapi.route("/call-time", callTimeRouter);
 openapi.route("/cumulative-call-time", cumulativeCallTimeRouter);
-openapi.route("/settings", settingsRouter);
 
 // Export the Hono app
 export default app;

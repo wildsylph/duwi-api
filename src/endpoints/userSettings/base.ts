@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-export const settings = z.object({
+export const userSettings = z.object({
     guild_id: z.string(),
     key: z.string(),
     value: z.string(),
 });
 
-export const SettingsModel = {
-    tableName: "settings",
+export const UserSettingsModel = {
+    tableName: "user_settings",
     primaryKeys: ["guild_id", "key"],
-    schema: settings,
+    schema: userSettings,
 };

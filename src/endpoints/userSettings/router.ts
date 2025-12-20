@@ -1,0 +1,15 @@
+import { Hono } from "hono";
+import { fromHono } from "chanfana";
+import { UserSettingsList } from "./userSettingsList";
+import { UserSettingsCreate } from "./userSettingsCreate";
+import { UserSettingsRead } from "./userSettingsRead";
+import { UserSettingsUpdate } from "./userSettingsUpdate";
+import { UserSettingsDelete } from "./userSettingsDelete";
+
+export const userSettingsRouter = fromHono(new Hono());
+
+userSettingsRouter.get("/", UserSettingsList);
+userSettingsRouter.post("/", UserSettingsCreate);
+userSettingsRouter.get("/:guild_id/:key", UserSettingsRead);
+userSettingsRouter.put("/:guild_id/:key", UserSettingsUpdate);
+userSettingsRouter.delete("/:guild_id/:key", UserSettingsDelete);
