@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS points (
     user_id TEXT,
     guild_id TEXT,
     points INTEGER,
+    lifetime_points INTEGER,
     PRIMARY KEY (user_id, guild_id)
 );
 

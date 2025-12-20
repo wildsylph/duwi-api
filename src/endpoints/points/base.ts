@@ -4,6 +4,7 @@ export const points = z.object({
     user_id: z.string(),
     guild_id: z.string(),
     points: z.number(),
+    lifetime_points: z.number(),
 });
 
 export const PointsModel = {

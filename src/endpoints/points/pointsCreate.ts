@@ -9,6 +9,7 @@ export class PointsCreate extends D1CreateEndpoint<HandleArgs> {
       user_id: true,
       guild_id: true,
       points: true,
+      lifetime_points: true,
     }),
   };
 }

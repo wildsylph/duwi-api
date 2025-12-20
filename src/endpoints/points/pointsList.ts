@@ -6,5 +6,5 @@ export class PointsList extends D1ListEndpoint<HandleArgs> {
   _meta = {
     model: PointsModel,
   };
-  defaultOrderBy = 'points DESC'
+  defaultOrderBy = 'lifetime_points DESC'
 }
