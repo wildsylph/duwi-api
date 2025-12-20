@@ -10,6 +10,6 @@ export const userSettingsRouter = fromHono(new Hono());
 
 userSettingsRouter.get("/", UserSettingsList);
 userSettingsRouter.post("/", UserSettingsCreate);
-userSettingsRouter.get("/:guild_id/:key", UserSettingsRead);
-userSettingsRouter.put("/:guild_id/:key", UserSettingsUpdate);
-userSettingsRouter.delete("/:guild_id/:key", UserSettingsDelete);
+userSettingsRouter.get("/:user_id/:key", UserSettingsRead);
+userSettingsRouter.put("/:user_id/:key", UserSettingsUpdate);
+userSettingsRouter.delete("/:user_id/:key", UserSettingsDelete);

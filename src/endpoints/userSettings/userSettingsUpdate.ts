@@ -6,7 +6,7 @@ export class UserSettingsUpdate extends D1UpdateEndpoint<HandleArgs> {
     _meta = {
         model: UserSettingsModel,
         fields: UserSettingsModel.schema.pick({
-            guild_id: true,
+            user_id: true,
             key: true,
             value: true,
         }),
