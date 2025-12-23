@@ -8,7 +8,7 @@ import { UserSettingsDelete } from "./userSettingsDelete";
 
 export const userSettingsRouter = fromHono(new Hono());
 
-userSettingsRouter.get("/", UserSettingsList);
+userSettingsRouter.get("/:user_id", UserSettingsList);
 userSettingsRouter.post("/", UserSettingsCreate);
 userSettingsRouter.get("/:user_id/:key", UserSettingsRead);
 userSettingsRouter.put("/:user_id/:key", UserSettingsUpdate);

@@ -8,7 +8,7 @@ import { GuildSettingsDelete } from "./guildSettingsDelete";
 
 export const guildSettingsRouter = fromHono(new Hono());
 
-guildSettingsRouter.get("/", GuildSettingsList);
+guildSettingsRouter.get("/:guild_id", GuildSettingsList);
 guildSettingsRouter.post("/", GuildSettingsCreate);
 guildSettingsRouter.get("/:guild_id/:key", GuildSettingsRead);
 guildSettingsRouter.put("/:guild_id/:key", GuildSettingsUpdate);

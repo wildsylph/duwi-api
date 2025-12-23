@@ -7,6 +7,7 @@ export class PointsUpdate extends D1UpdateEndpoint<HandleArgs> {
     model: PointsModel,
     fields: PointsModel.schema.pick({
       points: true,
+      lifetime_points: true,
     }),
   };
 }
